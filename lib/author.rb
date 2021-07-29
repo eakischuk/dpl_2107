@@ -18,6 +18,8 @@ class Author
     book_info[:author_last_name] = @last_name
     book_info[:title] = title
     book_info[:publication_date] = pub_date
-    @books << Book.new(book_info)
+    book = Book.new(book_info)
+    @books << book
+    book
   end
 end
