@@ -22,4 +22,14 @@ class Author
     @books << book
     book
   end
+
+  def time_frame
+    time_span = @books.map do |book|
+      book.publication_year
+    end
+    time_line = {}
+    time_line[:start] = time_span.min
+    time_line[:end] = time_span.max
+    time_line
+  end
 end
