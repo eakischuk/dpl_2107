@@ -97,4 +97,16 @@ RSpec.describe Library do
     expect(@dpl.checked_out_books).to eq([])
     expect(@dpl.checkout(jane_eyre)).to eq(true)
   end
+
+  it 'can checkout multiple books' do
+    jane_eyre = @charlotte_bronte.write("Jane Eyre", "October 16, 1847")
+    villette = @charlotte_bronte.write("Villette", "1853")
+    mockingbird = @harper_lee.write("To Kill a Mockingbird", "July 11, 1960")
+    @dpl.add_author(@charlotte_bronte)
+    @dpl.add_author(@harper_lee)
+    @dpl.checkout(jane_eyre)
+    @dpl.checkout(villette)
+
+    expect(@dpl.checked_out_books).to eq([jane_eyre, villette])
+  end
 end
