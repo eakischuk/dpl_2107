@@ -1,5 +1,6 @@
 require './lib/book'
 require './lib/author'
+require 'pry'
 
 RSpec.describe Author do
   before(:each) do
@@ -18,9 +19,12 @@ RSpec.describe Author do
     expect(@charlotte_bronte.books).to eq([])
   end
 
-  it 'can write books' do
+  it 'can write' do
     jane_eyre = @charlotte_bronte.write("Jane Eyre", "October 16, 1847")
-    # binding.pry
-    expect(@charlotte_bronte.books).to eq(jane_eyre)
+    expect(@charlotte_bronte.books).to eq([jane_eyre])
+    expect(jane_eyre.class).to eq(Book)
+    expect(jane_eyre.title).to eq("Jane Eyre")
   end
+
+
 end
