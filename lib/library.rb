@@ -16,4 +16,8 @@ class Library
   def publication_time_frame_for(author)
     author.time_frame
   end
+
+  def checkout(book)
+    @books.include?(book)
+  end
 end
