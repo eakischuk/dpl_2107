@@ -21,4 +21,10 @@ RSpec.describe Book do
   it 'has a publication year' do
     expect(@book.publication_year).to eq("1960")
   end
+
+  it 'counts checkouts' do
+   expect(@book.checkout_count).to eq(0)
+   @book.checkout
+   expect(@book.checkout_count).to eq(1)
+ end
 end
