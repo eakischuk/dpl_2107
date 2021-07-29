@@ -12,6 +12,7 @@ class Book
   end
 
   def publication_year
-    @publication_date.slice(9..12)
+    year = @publication_date.reverse.slice(0..3)
+    year.reverse
   end
 end
