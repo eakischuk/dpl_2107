@@ -10,4 +10,16 @@ RSpec.describe Library do
   it 'exists' do
     expect(@dpl).to be_a(Library)
   end
+
+  it 'has a name' do
+    expect(@dpl.name).to eq("Denver Public Library")
+  end
+
+  it 'starts without books' do
+    expect(@dpl.books).to eq([])
+  end
+
+  it 'starts without authors' do
+    expect(@dpl.authors).to eq([])
+  end
 end
