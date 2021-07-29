@@ -95,6 +95,6 @@ RSpec.describe Library do
     @dpl.return(jane_eyre)
 
     expect(@dpl.checked_out_books).to eq([])
-    expect(@dple.checkout(jane_eyre)).to eq(true)
+    expect(@dpl.checkout(jane_eyre)).to eq(true)
   end
 end
